@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{548AFE08-8C1D-4CB0-8813-6619C901BB64}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>shiwch.util</RootNamespace>
+    <AssemblyName>shiwch.util</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;ASYNC</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\shiwch.util.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;ASYNC</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\Assembly\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Assembly\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="protobuf-net">
+      <HintPath>..\assembly\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BitUtil.cs" />
+    <Compile Include="ByteArrayEqualityComparer.cs" />
+    <Compile Include="ByteExt.cs" />
+    <Compile Include="CharConver.cs" />
+    <Compile Include="Check.cs" />
+    <Compile Include="ConfigUtil.cs" />
+    <Compile Include="CryptHelper.cs" />
+    <Compile Include="Dapper\SqlMapper.cs" />
+    <Compile Include="Dapper\SqlMapperAsync.cs" />
+    <Compile Include="Dapper\SqlMapperExtensions.cs" />
+    <Compile Include="DataTableExt.cs" />
+    <Compile Include="DateTimeExt.cs" />
+    <Compile Include="EnumerableExt.cs" />
+    <Compile Include="FastActivator.cs" />
+    <Compile Include="FastMember\CallSiteCache.cs" />
+    <Compile Include="FastMember\MemberSet.cs" />
+    <Compile Include="FastMember\ObjectAccessor.cs" />
+    <Compile Include="FastMember\ObjectReader.cs" />
+    <Compile Include="FastMember\TypeAccessor.cs" />
+    <Compile Include="FastReflection\ConstructorInvoker.cs" />
+    <Compile Include="FastReflection\ConstructorInvokerCache.cs" />
+    <Compile Include="FastReflection\ConstructorInvokerFactory.cs" />
+    <Compile Include="FastReflection\FastReflectionCache.cs" />
+    <Compile Include="FastReflection\FastReflectionCaches.cs" />
+    <Compile Include="FastReflection\FastReflectionExtensions.cs" />
+    <Compile Include="FastReflection\FastReflectionFactories.cs" />
+    <Compile Include="FastReflection\FieldAccessor.cs" />
+    <Compile Include="FastReflection\FieldAccessorCache.cs" />
+    <Compile Include="FastReflection\FieldAccessorFactory.cs" />
+    <Compile Include="FastReflection\IFastReflectionCache.cs" />
+    <Compile Include="FastReflection\IFastReflectionFactory.cs" />
+    <Compile Include="FastReflection\MethodInvoker.cs" />
+    <Compile Include="FastReflection\MethodInvokerCache.cs" />
+    <Compile Include="FastReflection\MethodInvokerFactory.cs" />
+    <Compile Include="FastReflection\PropertyAccessor.cs" />
+    <Compile Include="FastReflection\PropertyAccessorCache.cs" />
+    <Compile Include="FastReflection\PropertyAccessorFactory.cs" />
+    <Compile Include="HashCodeUtil.cs" />
+    <Compile Include="HttpUtil.cs" />
+    <Compile Include="IPLocator.cs" />
+    <Compile Include="ListExt.cs" />
+    <Compile Include="Logging\ILog.cs" />
+    <Compile Include="Logging\Log4NetAdapter.cs" />
+    <Compile Include="Logging\LogManager.cs" />
+    <Compile Include="NameHelper.cs" />
+    <Compile Include="NetworkBytes.cs" />
+    <Compile Include="ObjectExt.cs" />
+    <Compile Include="OdbcHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RandomUtil.cs" />
+    <Compile Include="SensitiveWordParse.cs" />
+    <Compile Include="SqlCommandSet.cs" />
+    <Compile Include="SqlHelper.cs" />
+    <Compile Include="StringSafeConvert.cs" />
+    <Compile Include="StringExt.cs" />
+    <Compile Include="TypeExt.cs" />
+    <Compile Include="Util.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
